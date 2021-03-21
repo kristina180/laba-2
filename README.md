@@ -1,4 +1,7 @@
 # laba-2
+
+
+
 using System;
 
 namespace Laba_2
