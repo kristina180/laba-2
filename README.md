@@ -6,36 +6,31 @@ using System;
 
 namespace Laba_2
 {
-    public class Program
+    class Program
     {
         int x; 
 
-        static void Main(string[] args)
-        {
-           
-            Console.WriteLine("Введите аргумент x:");
+        Console.WriteLine("Введите аргумент x:");
             int x = Convert.ToInt32(Console.ReadLine());
-            int s = 0; //счётчик количества цифр в числе
-            int ch = x; 
-            if (ch!= 0)
+            int[] mass = MassGenerate(x);
+            foreach (var massElement in mass)
             {
-                s = s + 1;
-                ch = ch / 10;
+                Console.WriteLine(massElement.ToString());
             }
-            private int Massive (int i)
-            {
-                var mass = new int [i];
-            }
+            Console.ReadKey();
         }
 
-
-        static int Massive(string[] args)
+        private static int[] MassGenerate(int x)
         {
-            int[] nums = new int[s];
-            foreach (int i in nums)
-
-                nums[0] = x % 10;
-                nums[i] = nums[i - 1]%10;
-        }
+            int xRes=x;
+            int div = 10;
+            int[] resultArray = new int[x.ToString().Length];
+            for (int i = resultArray.Length-1; i >= 0; i--)
+            {
+                xRes =x % 10;
+                resultArray[i] = xRes;
+                x /= 10;
+            }
+            return resultArray;
     }
 }
